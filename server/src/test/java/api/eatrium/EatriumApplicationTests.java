@@ -1,14 +1,13 @@
-package com.example.main;
+model api.eatrium;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class mainTests {
+class EatriumApplicationTests {
 
 	@Test
 	void contextLoads() {
-
 	}
 
 }
