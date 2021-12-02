@@ -1,17 +1,13 @@
-package api.eatrium;
+package api;
 
-import model.menuItem;
-import model.user;
+import api.model.menuItem;
+import api.model.user;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.stereotype.Component;
-import repo.menuRepo;
-import repo.orderRepo;
-import repo.userRepo;
-
-import java.util.Arrays;
-import java.util.List;
+import api.repo.menuRepo;
+import api.repo.orderRepo;
+import api.repo.userRepo;
 
 @ComponentScan("model")
 @EnableMongoRepositories

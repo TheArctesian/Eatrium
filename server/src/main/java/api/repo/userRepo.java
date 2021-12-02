@@ -1,9 +1,10 @@
-package repo;
+package api.repo;
 
-import model.menuItem;
+import api.model.user;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface menuRepo extends MongoRepository<menuItem, Long> {
+public interface userRepo extends MongoRepository<user, Long> {
+
 }

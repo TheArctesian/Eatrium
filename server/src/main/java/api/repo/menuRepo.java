@@ -1,9 +1,9 @@
-package repo;
+package api.repo;
 
-import model.order;
+import api.model.menuItem;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface orderRepo extends MongoRepository <order, Long> {
+public interface menuRepo extends MongoRepository<menuItem, Long> {
 }

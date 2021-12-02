@@ -1,6 +1,6 @@
 package api.service;
 
-import model.menuItem;
+import api.model.menuItem;
 
 import java.util.List;
 
