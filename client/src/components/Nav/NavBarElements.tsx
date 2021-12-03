@@ -3,13 +3,11 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background: #000;
   height: 80px;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  margin-left: 25%;
+  margin-right: 25%;
   z-index: 10;
-
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
@@ -19,12 +17,19 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
   height: 100%;
+  font-size: 20px;
   cursor: pointer;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  transition: all 0.2s ease-in-out;
 
   &.active {
-    color: #15cdfc;
+    color: #f7f574;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #f7f574;
   }
 `;
 
@@ -46,51 +51,22 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
-
-  /* Second Nav */
-  /* margin-right: 24px; */
-
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
-
-  @media screen and (max-width: 768px) {
+  white-space: nowrap;
+  */ @media screen and (max-width: 768px) {
     display: none;
+  }
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #f7f574;
   }
 `;
 
 export const NavBtn = styled.nav`
   display: flex;
-  align-items: center;
-  margin-right: 24px;
-
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
-
-  @media screen and (max-width: 768px) {
+  align-items: center
+  width: 100vw; */ @media screen and
+    (max-width: 768px) {
     display: none;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #256ce1;
-  padding: 10px 22px;
-  color: #fff;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  /* Second Nav */
-  margin-left: 24px;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
   }
 `;
