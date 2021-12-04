@@ -170,6 +170,7 @@ const Navbar = () => {
                 </g>
               </svg>
             </button>
+            <span>not connected</span>
           </NavBtn>
           <NavLink to="/cart"></NavLink>
         </NavMenu>
