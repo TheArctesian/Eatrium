@@ -1,0 +1,19 @@
+button {
+  background-color: transparent;
+  width: 4rem;
+  border: none;
+  margin-right: 4vh;
+}
+
+strong {
+  color: #fff;
+  font-weight: 900;
+}
+
+h3 {
+  margin: auto;
+  text-align: center;
+  border: 1px solid;
+  width: 110%;
+  margin-right: 10px;
+}
