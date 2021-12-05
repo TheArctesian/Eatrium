@@ -1,0 +1,30 @@
+svg {
+    fill: rgb(255, 253, 253);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: auto;
+}
+
+svg:hover {
+    fill: rgb(112, 134, 255);
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+#metamask {
+    border: 2px solid rgb(255, 253, 253);
+    border-radius: 10px;
+}
+
+span {
+    white-space: normal;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: rgba(252, 211, 77);
+}
