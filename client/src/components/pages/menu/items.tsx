@@ -22,7 +22,7 @@ type Order = {
     isPaid: boolean;
 };
 const fetch = "http://localhost:8080/api/menu/";
-export default async function GetItems() {
+export default function GetItems() {
     const { active, account, library, connector, activate, deactivate } =
         useWeb3React();
     const [items, setItems] = useState<ItemType[]>([]);
