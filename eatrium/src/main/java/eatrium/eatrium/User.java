@@ -15,5 +15,4 @@ public class User {
     @Id
     String UserId;
     String Address;
-    Orders[] Cart;
 }

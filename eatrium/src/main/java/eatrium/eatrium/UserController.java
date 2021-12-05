@@ -35,6 +35,7 @@ public class UserController {
 
     @PostMapping(value="/addUserItem")
     public User postUser(@RequestBody User User) { //add user
+        
         return userRepository.save(User);
     }
 
@@ -42,7 +43,6 @@ public class UserController {
     public User putUser(@RequestBody User User) { //update user
         User oldUser = userRepository.findById(User.getUserId()).orElse(null);
         oldUser.setAddress(User.getAddress());
-        oldUser.setCart(User.getCart());
         userRepository.save(oldUser);
         return oldUser;
     }

@@ -40,7 +40,7 @@ public class OrdersController {
     @PutMapping(value="/{OrderId}")
     public Orders putOrders(@RequestBody Orders Orders) { // putt orders
         Orders oldOrders = ordersRepository.findById(Orders.getOrderId()).orElse(null);
-        oldOrders.setUserId(Orders.getUserId());
+        oldOrders.setUserAddress(Orders.getUserAddress());
         oldOrders.setItemId(Orders.getItemId());
         oldOrders.setIsPaid(Orders.getIsPaid());
         ordersRepository.save(oldOrders);

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Orders {
     @Id
     private String OrderId;
-    private String UserId;
+    private String UserAddress;
     private String ItemId;
     private Boolean IsPaid;
 }
