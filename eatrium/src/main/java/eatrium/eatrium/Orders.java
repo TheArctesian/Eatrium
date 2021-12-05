@@ -14,7 +14,7 @@ public class Orders {
     @Id
     private String OrderId;
     private String UserAddress;
-    private String ItemId;
     private Boolean IsPaid;
     private double Price;
+    private String itemName;
 }

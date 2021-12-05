@@ -2,7 +2,6 @@
 import { useWeb3React } from "@web3-react/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import web3, { RequestManager } from "web3-ts";
 
 type ItemType = {
     description: string;
@@ -16,16 +15,16 @@ type User = {
     userAddress: string;
 };
 type Order = {
-    id: string;
-    itemId: string;
-    userAddress: string;
     isPaid: boolean;
+    itemName: string;
+    orderId: string;
+    price: number;
+    userAddress: string;
 };
 const fetch = "http://localhost:8080/api/menu/";
 export default function GetItems() {
-    const { active, account, library, connector, activate, deactivate } =
-        useWeb3React();
     const [items, setItems] = useState<ItemType[]>([]);
+    const { account } = useWeb3React();
     const fetchData = async () => {
         const { data } = await axios.get(fetch);
         console.log(data);
@@ -35,16 +34,29 @@ export default function GetItems() {
         fetchData();
     }, []);
 
-    async function addOrder(itemId: string) {
-        const { data } = await axios.post(
-            "http://localhost:8080/api/orders/addOrdersItem",
-            {
-                userAddress: account,
-                itemId: itemId,
-                isPaid: false
-            }
-        );
+    //remove item from menu
+    async function deleteItem(itemId: string) {
+        console.log(itemId);
+        const { data } = await axios.delete(fetch + itemId);
         console.log(data);
+        fetchData();
+    }
+
+    async function postOrder(item: { name: any; price: any }) {
+        if (account) {
+            const { data } = await axios.post(
+                "http://localhost:8080/api/orders/addOrdersItem",
+                {
+                    isPaid: false,
+                    itemName: item.name,
+                    price: item.price,
+                    userAddress: account
+                }
+            );
+            console.log(data);
+        } else {
+            alert("Please connect to Metamask");
+        }
     }
 
     return (
@@ -62,7 +74,6 @@ export default function GetItems() {
                             </div>
                             <h1 className=" subpixel-antialiased text-xl font-extrabold tracking-wide text-center bg-blue-500 p-2">
                                 {item.name}
-                                {item.ItemId}
                             </h1>
                             <p className="subpixel-antialiased text-base  text-center bg-grey  bg-blue-500 p-2">
                                 {item.description}
@@ -74,7 +85,7 @@ export default function GetItems() {
                             <p>{item.ItemId}</p>
                             <div className="subpixel-antialiased bg-blue-500 p-4">
                                 <button
-                                    onClick={() => addOrder(item.ItemId)}
+                                    onClick={() => postOrder(item)}
                                     className="mx-20 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                 >
                                     Add to cart

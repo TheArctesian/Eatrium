@@ -41,8 +41,8 @@ public class OrdersController {
     public Orders putOrders(@RequestBody Orders Orders) { // putt orders
         Orders oldOrders = ordersRepository.findById(Orders.getOrderId()).orElse(null);
         oldOrders.setUserAddress(Orders.getUserAddress());
-        oldOrders.setItemId(Orders.getItemId());
         oldOrders.setIsPaid(Orders.getIsPaid());
+        oldOrders.setItemName(Orders.getItemName());
         ordersRepository.save(oldOrders);
 
         return oldOrders;
