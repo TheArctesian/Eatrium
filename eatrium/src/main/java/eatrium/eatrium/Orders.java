@@ -16,4 +16,5 @@ public class Orders {
     private String UserAddress;
     private String ItemId;
     private Boolean IsPaid;
+    private double Price;
 }
